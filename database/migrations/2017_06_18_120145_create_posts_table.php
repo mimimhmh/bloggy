@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->integer('user_id');
             $table->string('title');
             $table->string('slug');
+            $table->text('abstract');
             $table->text('body');
             $table->string('large_img_url');
             $table->string('med_img_url');
