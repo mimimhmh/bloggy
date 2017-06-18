@@ -42,7 +42,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.blade.php" class="navbar-brand"><img src="images/logo.png" alt="logo"></a>
+				<a href="master.blade.php" class="navbar-brand"><img src="images/logo.png" alt="logo"></a>
 			</div>
 			<div class="collapse navbar-collapse" id="main_nav">
 				<div class=" pull-right hidden-xs hidden-sm">

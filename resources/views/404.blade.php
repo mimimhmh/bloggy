@@ -41,7 +41,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.blade.php" class="navbar-brand"><img src="images/logo.png" alt="logo"></a>
+				<a href="master.blade.php" class="navbar-brand"><img src="images/logo.png" alt="logo"></a>
 			</div>
 			<div class="collapse navbar-collapse" id="main_nav">
 				<div class=" pull-right hidden-xs hidden-sm">
@@ -94,7 +94,7 @@
 						<h2>Oops, This Page Not Be Found!</h2>
 						<h3>We are really sorry but the page you requested is missing</h3>
 						<div class="error-bottom">
-							<a href="index.blade.php" class="home-page-link">go to home page<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<a href="master.blade.php" class="home-page-link">go to home page<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
