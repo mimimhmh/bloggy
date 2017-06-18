@@ -1,10 +1,10 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function ()
+{
 
-Route::get('/index', function () {
     return view('posts.index');
 });
+
+Route::get('/index', 'PostsController@index');
