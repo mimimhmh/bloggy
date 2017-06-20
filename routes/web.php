@@ -1,10 +1,7 @@
 <?php
 
 
-Route::get('/', function ()
-{
-
-    return view('posts.index');
-});
 
 Route::get('/index', 'PostsController@index');
+
+Route::get('/posts/{post}', 'PostsController@show');

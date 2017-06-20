@@ -1,8 +1,3 @@
-<!-- preloader -->
-<div id="preloader">
-    <div id="status"> <img src="images/preloader.gif" height="64" width="64" alt=""> </div>
-</div>
-
 
 <!--Navigation-->
 <nav class="navbar navbar-default navbar-static-top">

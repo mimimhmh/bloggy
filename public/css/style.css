@@ -23,7 +23,7 @@ Tag: blog,template,blog wordpress,bloging,theme
 11- Contact page
 12- single post comment
 13- Error 404 page
-
+14- PAGINATION numeric
 ------------------------------------------------*/
 
 body{
@@ -2366,4 +2366,82 @@ header .tagline {color: #1C202A;font-family: "Raleway",sans-serif;}
 .error-bottom .home-page-link:hover {
     background-color: #f2f2f2;
 	
+}
+
+/*-------------------------
+  14- PAGINATION numeric
+----------------------------------------------- */
+.blog-pagination {}
+@media (max-width: 767px) {
+    .blog-pagination {
+        margin-bottom: 40px;
+    }
+}
+
+.numeric-pagination .pagination {
+    margin: 0;
+}
+.numeric-pagination .pagination>li>a, 
+.numeric-pagination .pagination>li>span {
+    font-size: 13px;
+    margin-left: 10px;
+    color: #a7a7a7;
+    border: 1px solid #eee;
+	line-height:1.42857143;
+    padding: 8px 12px;
+}
+.numeric-pagination .pagination>li:first-child>a, 
+.numeric-pagination .pagination>li:first-child>span {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.numeric-pagination .pagination>li:last-child>a, 
+.numeric-pagination .pagination>li:last-child>span {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.numeric-pagination .pagination>li>a:hover, 
+.numeric-pagination .pagination>li>span:hover, 
+.numeric-pagination .pagination>li>a:focus, 
+.numeric-pagination .pagination>li>span:focus {
+     
+    border-color: transparent;
+	color:#fff;
+}
+.numeric-pagination .pagination>.active>a:hover{
+	color:#fff !important;
+}
+.numeric-pagination .pagination>.active>a, 
+.numeric-pagination .pagination>.active>span, 
+.numeric-pagination .pagination>.active>a:hover, 
+.numeric-pagination .pagination>.active>span:hover, 
+ .numeric-pagination .pagination>.active>a:focus, 
+ .numeric-pagination .pagination>.active>span:focus {
+    background-color: #9382c6;
+    border-color: #9382c6;
+	color:#fff;
+}
+
+.numeric-pagination .pagination>.disabled>a, 
+.numeric-pagination .pagination>.disabled>a:focus, 
+.numeric-pagination .pagination>.disabled>a:hover, 
+.numeric-pagination .pagination>.disabled>span, 
+.numeric-pagination .pagination>.disabled>span:focus, 
+.numeric-pagination .pagination>.disabled>span:hover {
+    border-color: #eee;
+	 color:#fff;
+}
+
+.page-count {
+    font-size: 13px;
+    border: 1px solid #eee;
+    color: #a7a7a7;
+    padding: 8px 12px;
+}
+
+@media (max-width: 479px) {
+    .numeric-pagination .pagination>li>a, 
+    .numeric-pagination .pagination>li>span {
+        margin-bottom: 10px;
+    }
 }
