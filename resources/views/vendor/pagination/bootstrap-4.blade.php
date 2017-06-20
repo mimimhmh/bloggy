@@ -1,11 +1,14 @@
 @if ($paginator->hasPages())
+    <div class="blog-pagination numeric-pagination clearfix">
     <ul class="pagination">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <li><a class="disabled button big previous">Previous Page</a></li>
+            <li><a><i class="fa fa-angle-left"></i> Previous</a></li>
             {{--<li class="page-item disabled"><span class="page-link">&laquo;</span></li>--}}
         @else
-            <li><a href="{{ $paginator->previousPageUrl() }}" rel="prev" class="button big previous">Previous Page</a></li>
+            <li><a href="{{ $paginator->previousPageUrl() }}" rel="prev">
+                    <i class="fa fa-angle-left"></i> Previous
+                </a></li>
             {{--<li class="page-item"><a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev">&laquo;</a></li>--}}
         @endif
 
@@ -30,11 +33,20 @@
 
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
-            <li><a rel="next" href="{{ $paginator->nextPageUrl() }}" class="button big next">Next Page</a></li>
+            <li><a rel="next" href="{{ $paginator->nextPageUrl() }}">
+                    Next <i class="fa fa-angle-right"></i>
+                </a></li>
 {{--            <li class="page-item"><a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next">&raquo;</a></li>--}}
         @else
-            <li><a class="disabled button big next">Next Page</a></li>
+            <li><a>
+                    Next <i class="fa fa-angle-right"></i>
+                </a></li>
             {{--<li class="page-item disabled"><span class="page-link">&raquo;</span></li>--}}
         @endif
     </ul>
+
+        <div class="page-count pull-right">
+            <span>Page {{ $paginator->currentPage() }} of {{ count($element) }}</span>
+        </div>
+    </div>
 @endif
