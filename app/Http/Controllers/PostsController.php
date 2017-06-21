@@ -23,4 +23,9 @@ class PostsController extends Controller
 
         return view('posts.full-post', compact('post'));
     }
+
+    public function create() {
+
+        return view('posts.create');
+    }
 }
