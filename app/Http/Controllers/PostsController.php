@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-//    public function __construct() {
-//
-//        $this->middleware('auth')->except(['index', 'show']);
-//    }
 
     public function index() {
 
@@ -26,6 +22,7 @@ class PostsController extends Controller
 
     public function create() {
 
-        return view('posts.create');
+        return view('posts.post-create');
     }
+    
 }

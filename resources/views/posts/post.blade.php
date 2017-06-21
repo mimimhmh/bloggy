@@ -15,8 +15,8 @@
     </header>
     <a href="/posts/{{ $post->id }}" class="image featured">
         <img src="{{ $post->large_img_url }}" alt=""/></a>
-    <p>
-        {{ $post->abstract }}
+    <p class="post-article">
+        {{ $post->body }}
     </p>
     <footer>
         <ul class="actions">

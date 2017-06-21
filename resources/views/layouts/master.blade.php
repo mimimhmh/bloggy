@@ -77,7 +77,7 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
 
-			<script type="text/javascript">
+    <script type="text/javascript">
 		// Slider
 		jQuery('.owl-carousel').owlCarousel({
 			loop:true,
@@ -99,6 +99,11 @@
 			}
 		});
      </script>
+    <script>
+        var abstract = $('.post-article');
+        abstract.css('overflow', 'hidden');
+        abstract.css('height', '40');
+    </script>
 
 
 </body>
