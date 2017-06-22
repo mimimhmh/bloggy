@@ -20,7 +20,7 @@
         </header>
         <div class="image featured"><img src="{{URL::asset($post->large_img_url)}}" alt="" /></div>
 
-        {{ $post->body }}
+        {!! html_entity_decode($post->body) !!}
 
         <footer>
 
@@ -39,8 +39,8 @@
 
             <ul class="stats">
                 <li><a href="#">General</a></li>
-                <li><a href="#" class="icon fa-heart">28</a></li>
-                <li><a href="#" class="icon fa-comment">128</a></li>
+                <li><a href="#" class="fa fa-heart">28</a></li>
+                <li><a href="#" class="fa fa-comment">128</a></li>
             </ul>
         </footer>
     </article>

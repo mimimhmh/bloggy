@@ -24,5 +24,24 @@ class PostsController extends Controller
 
         return view('posts.post-create');
     }
-    
+
+    public function store() {
+
+//        dd(request('title'));
+
+        $this->validate(request(), [
+            'title' => 'required',
+            'body'  => 'required'
+        ]);
+
+        $post = new Post([
+            'title'         => request('title'),
+            'body'          => request('body'),
+            'large_img_url' => 'images/posts/1/large-post01.jpg'
+        ]);
+
+        auth()->user()->publish($post);
+
+        return redirect('/');
+    }
 }

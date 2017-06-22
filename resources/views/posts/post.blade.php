@@ -15,9 +15,10 @@
     </header>
     <a href="/posts/{{ $post->id }}" class="image featured">
         <img src="{{ $post->large_img_url }}" alt=""/></a>
-    <p class="post-article">
-        {{ $post->body }}
-    </p>
+    <div class="post-article">
+        {!! html_entity_decode($post->body) !!}
+    </div>
+    <br>
     <footer>
         <ul class="actions">
             <li><a href="/posts/{{ $post->id }}" class="button big">Continue Reading</a></li>
@@ -29,3 +30,4 @@
         </ul>
     </footer>
 </article>
+

@@ -2445,3 +2445,8 @@ header .tagline {color: #1C202A;font-family: "Raleway",sans-serif;}
         margin-bottom: 10px;
     }
 }
+
+.post-article {
+    height: 40px;
+    overflow: hidden;
+}
