@@ -25,23 +25,27 @@ class PostsController extends Controller
         return view('posts.post-create');
     }
 
-    public function store() {
-
-//        dd(request('title'));
+    public function store(Request $request) {
 
         $this->validate(request(), [
             'title' => 'required',
-            'body'  => 'required'
+            'body'  => 'required',
+            'large_img_url' => 'required | mimes:jpeg,jpg,png,gif | max:50000'
         ]);
+
+        $file = $request->file('large_img_url');
+        $currentId = \DB::table('posts')->max('id') + 1;
+        $file->storeAs('public/images/posts/'.$currentId.'/main', $file->getClientOriginalName());
+        $mainImgUrl = 'storage/images/posts/'.$currentId.'/main'.'/'.$file->getClientOriginalName();
 
         $post = new Post([
             'title'         => request('title'),
             'body'          => request('body'),
-            'large_img_url' => 'images/posts/1/large-post01.jpg'
+            'large_img_url' => $mainImgUrl
         ]);
 
         auth()->user()->publish($post);
 
-        return redirect('/');
+        return redirect()->home();
     }
 }

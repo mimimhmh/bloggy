@@ -14,7 +14,7 @@
         </div>
     </header>
     <a href="/posts/{{ $post->id }}" class="image featured">
-        <img src="{{ $post->large_img_url }}" alt=""/></a>
+    <img src="{{ $post->large_img_url }}" alt=""/></a>
     <div class="post-article">
         {!! html_entity_decode($post->body) !!}
     </div>

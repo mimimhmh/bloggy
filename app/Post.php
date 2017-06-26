@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Post
@@ -11,7 +12,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Post extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = ['title', 'body', 'large_img_url'];
+
+    protected $dates = [
+        'deleted_at'
+    ];
 
     public function user() {
 

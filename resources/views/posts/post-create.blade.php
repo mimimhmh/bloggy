@@ -11,7 +11,7 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
 
     <h1>Publish a post</h1>
-    <form method="post" action="/posts">
+    <form method="post" action="/posts" enctype="multipart/form-data">
 
         {{ csrf_field() }}
 
@@ -42,12 +42,26 @@
         $(function () {
             $('#postEditor').froalaEditor({
                 // Set the file upload URL.
-                imageUploadURL: '/upload_image',
-
+                toolbarButtons: ['undo', 'redo', 'html', '-', 'fontSize', 'paragraphFormat', 'align', 'quote', '|', 'formatOL', 'formatUL', '|', 'bold', 'italic', 'underline', '|', 'insertLink', 'insertImage', 'insertTable'],
+                heightMin: 300,
+                imageMove: true,
+                imageUploadParam: 'image',
+                imageUploadMethod: 'post',
+                // Set the image upload URL.
+                imageUploadURL: '/files/post',
                 imageUploadParams: {
-                    id: 'postEditor'
+                    location: 'images', // This allows us to distinguish between Froala or a regular file upload.
+                    _token: "{{ csrf_token() }}" // This passes the laravel token with the ajax request.
                 },
-                height: 300
+                // URL to get all department images from
+                imageManagerLoadURL: '/fileuploads',
+                // Set the delete image request URL.
+                imageManagerDeleteURL: "/fileuploads",
+                // Set the delete image request type.
+                imageManagerDeleteMethod: "DELETE",
+                imageManagerDeleteParams: {
+                    _token: "{{ csrf_token() }}"
+                }
             })
         });
     </script>

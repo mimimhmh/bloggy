@@ -19,8 +19,10 @@
             </div>
         </header>
         <div class="image featured"><img src="{{URL::asset($post->large_img_url)}}" alt="" /></div>
-
-        {!! html_entity_decode($post->body) !!}
+        <hr>
+        <div class="fr-view">
+            {!! html_entity_decode($post->body) !!}
+        </div>
 
         <footer>
 
@@ -32,8 +34,6 @@
                     <li><a href="#" target="_blank"><i class="fa fa-pinterest"></i> </a></li>
                     <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i> </a></li>
                     <li><a href="#" target="_blank"><i class="fa fa-tporblr"></i> </a></li>
-
-
                 </ul>
             </div>
 
