@@ -16,8 +16,34 @@
         {{ csrf_field() }}
 
         <div class="form-group">
-            <label for="title">Post title</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
+            <label for="title">Post Title</label>
+            <input type="text" class="form-control"
+                   id="title"
+                   name="title"
+                   value="{{ old('title') }}"
+                   placeholder="Enter title"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label for="slug">Post Slug</label>
+            <input type="text" class="form-control" id="slug" name="slug"
+                   value="{{ old('slug') }}"
+                   placeholder="Enter slug">
+        </div>
+
+        <div class="form-group">
+            <label for="abstract">Post Abstract</label>
+            <textarea class="form-control" id="abstract"
+                      name="abstract"
+                      placeholder="Enter abstract"
+                      rows="2"
+                      maxlength="400">
+                {{ old('abstract') }}
+            </textarea>
+            <small id="fileHelp" class="form-text text-muted">
+                Max length 400 characters.
+            </small>
         </div>
 
         <div class="form-group">
@@ -30,7 +56,9 @@
 
         <div class="form-group">
             <label for="postEditor">Post body</label>
-            <textarea class="form-control" id="postEditor" name="body"></textarea>
+            <textarea class="form-control" id="postEditor" name="body">
+                {{ old('body') }}
+            </textarea>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Publish</button>

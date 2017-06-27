@@ -7,7 +7,7 @@
         <header>
             <div class="title">
                 <h2>{{ $post->title }}</h2>
-                <p>{{ $post->abstract }}</p>
+                <p>{{ $post->slug }}</p>
             </div>
             <div class="meta">
                 <time class="published"

@@ -2447,6 +2447,6 @@ header .tagline {color: #1C202A;font-family: "Raleway",sans-serif;}
 }
 
 .post-article {
-    height: 40px;
+    height: 100px;
     overflow: hidden;
 }
