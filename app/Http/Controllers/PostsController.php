@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
 
+    function __construct() {
+
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     public function index() {
 
         $posts = Post::latest()->paginate(3);

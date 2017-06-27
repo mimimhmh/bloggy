@@ -14,10 +14,13 @@
         <div class="collapse navbar-collapse" id="main_nav">
             <div class=" pull-right hidden-xs hidden-sm">
                 <ul class="nav social-links">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                    @if(Auth::check())
+                        <li><a href="#">Hello, {{ Auth::getUser()->name }}</a></li>
+                        <li><a href="/logout"><i class="fa fa-sign-out"></i></a></li>
+                    @else
+                        <li><a href="/register"><i class="fa fa-registered"></i></a></li>
+                        <li><a href="/login"><i class="fa fa-sign-in"></i></a></li>
+                    @endif
                 </ul>
 
             </div>

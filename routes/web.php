@@ -13,7 +13,8 @@ Route::get('/posts/{post}', 'PostsController@show');
 
 Route::post('/posts', 'PostsController@store');
 
-
+//
+Route::get('/logout', 'Auth\SessionsController@destroy');
 
 //editor file uploads
 Route::post('/files/post', 'FileUploadController@store');
