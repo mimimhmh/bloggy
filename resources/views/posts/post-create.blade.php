@@ -70,7 +70,7 @@
         $(function () {
             $('#postEditor').froalaEditor({
                 // Set the file upload URL.
-                toolbarButtons: ['undo', 'redo', 'html', '-', 'fontSize', 'paragraphFormat', 'align', 'quote', '|', 'formatOL', 'formatUL', '|', 'bold', 'italic', 'underline', '|', 'insertLink', 'insertImage', 'insertTable'],
+                toolbarButtons: ['undo', 'redo', 'html', '-', 'fontSize', 'paragraphFormat', 'align', 'quote', '|', 'formatOL', 'formatUL', '|', 'bold', 'italic', 'underline', '|', 'insertLink', 'insertImage', 'insertVideo', 'insertTable'],
                 heightMin: 300,
                 imageMove: true,
                 imageUploadParam: 'image',
