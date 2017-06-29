@@ -13,6 +13,8 @@ Route::get('/posts/{post}', 'PostsController@show');
 
 Route::post('/posts', 'PostsController@store');
 
+Route::post('/posts/{post}/comment', 'CommentsController@store');
+
 //
 Route::get('/logout', 'Auth\SessionsController@destroy');
 

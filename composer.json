@@ -9,8 +9,7 @@
         "barryvdh/laravel-ide-helper": "^2.3",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "froala/wysiwyg-editor-php-sdk" : "*",
-        "unisharp/laravel-filemanager": "^1.8"
+        "froala/wysiwyg-editor-php-sdk" : "*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
