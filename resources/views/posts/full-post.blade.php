@@ -39,7 +39,18 @@
 
             <ul class="stats">
                 <li><a href="#">General</a></li>
-                <li><a href="#" class="fa fa-heart">28</a></li>
+                <li>
+                    <form id="voteForm{{ $post->id }}" method="post" action="/votes/{{ $post->id }}">
+                        {{ csrf_field() }}
+                        <a href="javascript:{}"
+                           onclick="document.getElementById('voteForm{{ $post->id }}').submit();return false;"
+                           class="fa {{ Auth::check() &&
+                       Auth::user()->hasVotedFor($post) ? 'fa-heart':'fa-heart-o' }}"
+                                {{Auth::guest()? 'disabled' : ''  }}>
+                            {{ $post->votes->count() }}
+                        </a>
+                    </form>
+                </li>
                 <li><a href="#blog-comments" class="fa fa-comment">{{ count($post->comments) }}</a></li>
             </ul>
         </footer>

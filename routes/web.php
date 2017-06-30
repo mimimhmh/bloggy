@@ -15,6 +15,8 @@ Route::post('/posts', 'PostsController@store');
 
 Route::post('/posts/{post}/comment', 'CommentsController@store');
 
+Route::post('/votes/{post}', 'PostVotesController@store');
+
 //
 Route::get('/logout', 'Auth\SessionsController@destroy');
 

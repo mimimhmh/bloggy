@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Model\PostVote;
 use App\Models\Comment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -32,6 +33,14 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function votes() {
+
+        return $this->hasMany(PostVote::class, 'post_id');
+    }
+
+    /**
+     *
+     */
     public function addComment() {
 
         $this->comments()->create([
