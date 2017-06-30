@@ -26,7 +26,7 @@
         <ul class="stats">
             <li><a href="#">General</a></li>
             <li><a href="#" class="fa fa-heart">28</a></li>
-            <li><a href="#" class="fa fa-comment">128</a></li>
+            <li><a href="#" class="fa fa-comment">{{ count($post->comments) }}</a></li>
         </ul>
     </footer>
 </article>

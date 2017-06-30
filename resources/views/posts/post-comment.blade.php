@@ -1,7 +1,6 @@
 @if(count($post->comments) > 0)
-    <div class="blog-comments">
+    <div class="blog-comments" id="blog-comments">
         <div class="blog-comment-main">
-
             <h3>
                 {{ count($post->comments) }}
                 {{(count($post->comments) == 1)? 'Comment' : 'Comments' }}
@@ -31,11 +30,10 @@
                     {{--aria-hidden="true"></i> </a>--}}
                     {{--</div>--}}
                     {{--</div>--}}
-
         </div>
     </div>
 @else
-    <hr>
+    <hr id="blog-comments">
 @endif
 
 <!-- Blog Contact Form Begins -->
@@ -45,7 +43,9 @@
         {{ csrf_field() }}
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
             <div class="form-group">
-                <textarea name="body" placeholder="Comment" required></textarea>
+                <textarea name="body" placeholder="Comment" required>
+                    {{ old('body') }}
+                </textarea>
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
