@@ -53,8 +53,4 @@
         @include('posts.post-comment')
     <!-- Blog Pagination Ends -->
 
-    <!-- Blog Contact Form Begins -->
-        @include('posts.blog-contact')
-    <!-- Blog Contact Form Ends -->
-
 @endsection

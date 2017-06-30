@@ -31,4 +31,13 @@ class Post extends Model
 
         return $this->hasMany(Comment::class);
     }
+
+    public function addComment() {
+
+        $this->comments()->create([
+            'user_id' => auth()->id(),
+            'body'    => request('body')
+        ]);
+
+    }
 }
