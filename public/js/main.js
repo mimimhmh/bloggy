@@ -69,10 +69,10 @@ $('a[href="#top"]').on('click',function(){
 	
   	$(window).on( 'load',function() {
 
-   	// will first fade out the loading animation 
-    	$("#status").fadeOut("slow"); 
+   	// will first fade out the loading animation
+    	$("#status").fadeOut("slow");
 
-    	// will fade out the whole DIV that covers the website. 
-    	$("#preloader").delay(500).fadeOut("slow").remove();      
+    	// will fade out the whole DIV that covers the website.
+    	$("#preloader").delay(500).fadeOut("slow").remove();
 
   	}) ;

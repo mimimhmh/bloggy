@@ -38,7 +38,7 @@
                     </a>
                 </form>
             </li>
-            <li><a href="#" class="fa fa-comment">{{ count($post->comments) }}</a></li>
+            <li><a href="" class="fa fa-comment">{{ count($post->comments) }}</a></li>
         </ul>
     </footer>
 </article>

@@ -15,7 +15,10 @@ class PostsController extends Controller
 
     public function index() {
 
-        $posts = Post::latest()->paginate(3);
+        $orderBy = request()->exists('popular')? 'votes_count' : 'updated_at';
+
+        $posts = Post::with('user')->withCount('votes')
+            ->orderBy($orderBy, 'desc')->paginate(3);
 
         return view('posts.index', compact('posts'));
     }
