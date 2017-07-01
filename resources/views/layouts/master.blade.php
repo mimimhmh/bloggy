@@ -3,6 +3,7 @@
 <head>
     <title>Breif | Blogging is Passion</title>
     @include('layouts.head-links')
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 <body>
 
