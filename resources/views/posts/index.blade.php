@@ -25,21 +25,21 @@
 
         $(".form-link").click(function () {
             let url = $(this).parent().get(0).getAttribute('action');
-            let obj1 = $(this);
+            let clickedLink = $(this);
             $.ajax({
                 type: "POST",
                 url: url,
                 data: {},
                 success: function (data) {
-                    obj1.removeClass();
+                    clickedLink.removeClass();
                     let flag = false;
                     if (data.result.attached.length && {{ Auth::check() }}){
                         flag = true;
                     }
                     let style = flag ? "fa-heart":"fa-heart-o";
-                    obj1.addClass("fa " + style +
+                    clickedLink.addClass("fa " + style +
                         " form-link");
-                    obj1.text(" " + data.votes_count);
+                    clickedLink.text(" " + data.votes_count);
                     console.log(data + "\n" + flag);
                 }
             });
