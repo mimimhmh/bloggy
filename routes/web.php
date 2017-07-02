@@ -26,3 +26,17 @@ Route::DELETE('/fileuploads', 'FileUploadController@destroy');
 
 Route::resource('/fileuploads', 'FileUploadController');
 Route::resource('/posts', 'PostsController');
+
+
+//test ajax
+//Route::get('/demo', function ()
+//{
+//
+//    return view('test-ajax');
+//});
+//
+//Route::post('/test', 'OtherController@testfunction');
+
+
+
+

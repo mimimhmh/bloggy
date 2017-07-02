@@ -30,10 +30,11 @@
                     {{ csrf_field() }}
                     <a href="javascript:{}"
                        @if(auth()->check())
-                       onclick="document.getElementById('voteForm{{ $post->id }}').submit();return false;"
+                       {{--onclick="document.getElementById('voteForm{{ $post->id }}').submit();return false;"--}}
                        @endif
                        class="fa {{ Auth::check() &&
-                       Auth::user()->hasVotedFor($post) ? 'fa-heart':'fa-heart-o' }}">
+                       Auth::user()->hasVotedFor($post) ? 'fa-heart':'fa-heart-o' }}
+                               form-link">
                         {{ $post->votes->count() }}
                     </a>
                 </form>
