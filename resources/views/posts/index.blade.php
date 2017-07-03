@@ -24,25 +24,29 @@
         });
 
         $(".form-link").click(function () {
-            let url = $(this).parent().get(0).getAttribute('action');
-            let clickedLink = $(this);
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: {},
-                success: function (data) {
-                    clickedLink.removeClass();
-                    let flag = false;
-                    if (data.result.attached.length && {{ Auth::check() }}){
-                        flag = true;
+            @if(! auth()->check())
+                alert('Login first to like the post!');
+            @else
+                let url = $(this).parent().get(0).getAttribute('action');
+                let clickedLink = $(this);
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: {},
+                    success: function (data) {
+                        clickedLink.removeClass();
+                        let flag = false;
+                        if (data.result.attached.length){
+                            flag = true;
+                        }
+                        let style = flag ? "fa-heart":"fa-heart-o";
+                        clickedLink.addClass("fa " + style +
+                            " form-link");
+                        clickedLink.text(" " + data.votes_count);
+                        console.log(data + "\n" + flag);
                     }
-                    let style = flag ? "fa-heart":"fa-heart-o";
-                    clickedLink.addClass("fa " + style +
-                        " form-link");
-                    clickedLink.text(" " + data.votes_count);
-                    console.log(data + "\n" + flag);
-                }
-            });
+                });
+            @endif
         });
     </script>
 
