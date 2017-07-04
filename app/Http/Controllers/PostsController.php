@@ -41,21 +41,34 @@ class PostsController extends Controller
             'large_img_url' => 'required | mimes:jpeg,jpg,png,gif | max:50000'
         ]);
 
-        $file = $request->file('large_img_url');
-        $currentId = \DB::table('posts')->max('id') + 1;
-        $file->storeAs('public/images/posts/' . $currentId . '/main', $file->getClientOriginalName());
-        $mainImgUrl = 'storage/images/posts/' . $currentId . '/main' . '/' . $file->getClientOriginalName();
+        $completePath = $this->storeMainImage($request);
 
         $post = new Post([
             'title'         => request('title'),
             'slug'          => request('slug'),
             'abstract'      => request('abstract'),
             'body'          => request('body'),
-            'large_img_url' => $mainImgUrl
+            'large_img_url' => $completePath
         ]);
 
         auth()->user()->publish($post);
 
         return redirect()->home();
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
+    public function storeMainImage(Request $request) {
+
+        $file = $request->file('large_img_url');
+        $filename = $file->getClientOriginalName();
+        $currentId = \DB::table('posts')->max('id') + 1;
+        $destinationPath = 'storage/images/posts/' . $currentId . '/main/';
+        $request->file('large_img_url')->move($destinationPath, $filename);
+        $completePath = url('/' . $destinationPath . $filename);
+
+        return $completePath;
     }
 }

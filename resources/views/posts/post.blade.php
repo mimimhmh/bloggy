@@ -29,9 +29,6 @@
                 <form id="voteForm{{ $post->id }}" method="post" action="/votes/{{ $post->id }}">
                     {{ csrf_field() }}
                     <a href="javascript:{}"
-                       @if(auth()->check())
-                       {{--onclick="document.getElementById('voteForm{{ $post->id }}').submit();return false;"--}}
-                       @endif
                        class="fa {{ Auth::check() &&
                        Auth::user()->hasVotedFor($post) ? 'fa-heart':'fa-heart-o' }}
                                form-link">
