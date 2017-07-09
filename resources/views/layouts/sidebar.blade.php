@@ -7,14 +7,16 @@
         <h2 class="title">POPULAR POSTS</h2>
 
         @foreach($populars as $popular)
-            @include('layouts.miniposts')
+            @include('layouts.mini-posts')
         @endforeach
     </section>
     <!-- Posts List -->
     <section>
         <h2 class="title">LATEST POSTS</h2>
 
-        @include('layouts.latestposts')
+        @foreach($latest_posts as $post)
+            @include('layouts.latest-posts')
+        @endforeach
 
     </section>
 

@@ -20,6 +20,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with('populars', Post::popular());
         });
 
+        view()->composer('layouts.sidebar', function ($view){
+
+            $view->with('latest_posts', Post::latest()->paginate(3));
+        });
+
     }
 
     /**
