@@ -15,11 +15,18 @@
             <div class=" pull-right hidden-xs hidden-sm">
                 <ul class="nav social-links">
                     @if(Auth::check())
-                        <li><a href="#">Hello, {{ Auth::getUser()->name }}</a></li>
-                        <li><a href="/logout"><i class="fa fa-sign-out"></i></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/profile">profile</a></li>
+                                <li><a href="/logout">logout</a></li>
+                            </ul>
+                        </li>
                     @else
-                        <li><a href="/register"><i class="fa fa-registered"></i></a></li>
-                        <li><a href="/login"><i class="fa fa-sign-in"></i></a></li>
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
                     @endif
                 </ul>
 
