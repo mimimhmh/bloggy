@@ -49,4 +49,14 @@ class Post extends Model
         ]);
 
     }
+
+    /**
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public static function popular() {
+
+        return Post::with('user')->withCount('votes')
+            ->orderBy('votes_count', 'desc')->paginate(3);
+    }
+
 }

@@ -28,6 +28,11 @@ Route::resource('/fileuploads', 'FileUploadController');
 Route::resource('/posts', 'PostsController');
 
 
+//test angular
+Route::get('/angular', function (){
+    return view('test-angular');
+});
+
 //test ajax
 //Route::get('/demo', function ()
 //{

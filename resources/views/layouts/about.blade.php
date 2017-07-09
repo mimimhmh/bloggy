@@ -4,7 +4,7 @@
 
     <a href="single-post.html" class="image"><img class="img-responsive" src="images/aboutme.jpg" alt="about me" /></a>
     <div class="author-widget">
-        <h4 class="author-name">Catherine Doe</h4>
+        <h4 class="author-name">Jay Wang</h4>
         <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
     </div>
     <div class="social">

@@ -6,8 +6,9 @@
     <section>
         <h2 class="title">POPULAR POSTS</h2>
 
-        @include('layouts.miniposts')
-
+        @foreach($populars as $popular)
+            @include('layouts.miniposts')
+        @endforeach
     </section>
     <!-- Posts List -->
     <section>
