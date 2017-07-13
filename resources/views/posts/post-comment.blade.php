@@ -14,7 +14,9 @@
                         <p>
                             {{ $comment->body }}
                         </p>
-                        <a href="javascript:void(0)" class="comment-reply"> Reply
+                        <a href="javascript:{}"
+                           onclick="triggerComment('reply{{ $comment->id }}', false);"
+                           class="comment-reply"> Reply
                             <i class="fa fa-angle-right" aria-hidden="true"></i>
                         </a>
 
@@ -28,19 +30,30 @@
                             <p>using Leo Ipimpor is that it has a more-or-less normal distribution of letters, as
                                 opposed to
                                 using 'Content here, content here', making it look like readable English.</p>
-                            <a href="javascript:void(0)" class="comment-reply"> Reply <i class="fa fa-angle-right"
-                                                                                         aria-hidden="true"></i> </a>
+                            <a href="javascript:{}"
+                               onclick="triggerComment('reply{{ $comment->id }}', true);"
+                               class="comment-reply reply"> Reply
+                                <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
                         </div>
                     </div>
-                    <br>
-                    <div class="blog-comment clearfix reply-div">
+
+                    <div class="blog-comment clearfix reply-div"
+                         style="display: none;"
+                         id="reply{{ $comment->id }}">
                         <form action="" href="">
-                            <textarea name="reply" placeholder="" class="pts-txt" cols="80" rows="2"></textarea>
+                            <textarea name="reply"
+                                      placeholder=""
+                                      class="pts-txt"
+                                      id="txt{{ $comment->id }}"
+                                      cols="80" rows="2">
+
+                            </textarea>
                             <button class="reply-btn">Reply</button>
                         </form>
                     </div>
+                    <br>
+                    <br>
                 </div>
-
             @endforeach
 
         </div>
@@ -55,3 +68,33 @@
 
 @include('layouts.errors')
 
+<script>
+
+    let show_flag = false;
+
+    function triggerComment(replyId, reply_flag) {
+
+        let reply = $('#' + replyId);
+        let textArea = reply.find("textarea");
+        show_flag = reply[0].getAttribute('style') === '';
+        if (show_flag && reply_flag) {
+
+        } else {
+            reply.toggle();
+        }
+
+        if (reply_flag) {
+            textArea.text('@wang: ');
+        }
+
+        if (! reply_flag) {
+            textArea.text('');
+        }
+
+        textArea.focus();
+
+
+    }
+
+
+</script>
