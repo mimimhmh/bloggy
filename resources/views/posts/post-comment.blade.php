@@ -40,16 +40,30 @@
                     <div class="blog-comment clearfix reply-div"
                          style="display: none;"
                          id="reply{{ $comment->id }}">
-                        <form action="" href="">
-                            <textarea name="reply"
+                        <form action="POST" href="">
+                            {{ csrf_field() }}
+                            <textarea name="body"
                                       placeholder=""
                                       class="pts-txt"
                                       id="txt{{ $comment->id }}"
                                       cols="80" rows="2">
-
+                                {{ old('body') }}
                             </textarea>
                             <button class="reply-btn">Reply</button>
                         </form>
+                    </div>
+
+                    <div class="blog-comment clearfix reply-div"
+                         style="display: none;"
+                         id="reply{{ $comment->id }}-guest">
+
+                        <div class="blog-comment clearfix reply-div-guest">
+                            Please
+                            <a href="/login"><strong>login</strong></a>
+                            to reply a comment
+                        </div>
+                        <button class="reply-btn" disabled > Reply </button>
+
                     </div>
                     <br>
                     <br>
@@ -74,7 +88,15 @@
 
     function triggerComment(replyId, reply_flag) {
 
+        let reply_guest = $('#' + replyId + '-guest');
         let reply = $('#' + replyId);
+
+        @if(! auth()->check())
+
+            reply_guest.toggle();
+
+        @else
+
         let textArea = reply.find("textarea");
         show_flag = reply[0].getAttribute('style') === '';
         if (show_flag && reply_flag) {
@@ -87,12 +109,13 @@
             textArea.text('@wang: ');
         }
 
-        if (! reply_flag) {
+        if (!reply_flag) {
             textArea.text('');
         }
 
         textArea.focus();
 
+        @endif
 
     }
 
