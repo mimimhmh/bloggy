@@ -32,26 +32,8 @@
 
             </div>
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="#" >Life Style</a></li>
-                <li><a href="about.html">Fashion</a></li>
-                <li><a href="#" >People</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="leftsidebar.blade.php">left sidebar</a></li>
-                        <li><a href="fullwidth.blade.php">full width</a></li>
-                        <li><a href="404.blade.php">error 404</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Post Format</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="image-post.blade.php">Image Post</a></li>
-                        <li><a href="audio-post.blade.php">Audio Post</a></li>
-                        <li><a href="video-post.blade.php">Video Post</a></li>
-                        <li><a href="full-post.blade.php">full Post</a></li>
-                    </ul>
-                </li>
+                <li><a href="/posts/create" >Publish</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.blade.php">contact</a></li>
 
             </ul>
