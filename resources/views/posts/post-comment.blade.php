@@ -15,7 +15,7 @@
                             {{ $comment->body }}
                         </p>
                         <a href="javascript:{}"
-                           onclick="triggerComment('reply{{ $comment->id }}', false);"
+                           onclick="triggerComment('reply{{ $comment->id }}', '', false);"
                            class="comment-reply"> Reply
                             <i class="fa fa-angle-right" aria-hidden="true"></i>
                         </a>
@@ -28,14 +28,15 @@
                             <a class="comment-avtar"><img src="{{URL::asset('images/avtar-comment.jpg')}}" alt="image"></a>
                             <div class="comment-text">
                                 <h3>{{ $reply->user->name }}</h3>
-                                <h5>{{ $comment->created_at->diffForHumans() }}</h5>
+                                <h5>{{ $reply->created_at->diffForHumans() }}</h5>
                                 <p>
                                     {{ $reply->body }}
                                 </p>
                                 <a href="javascript:{}"
-                                   onclick="triggerComment('reply{{ $comment->id }}', true);"
+                                   onclick="triggerComment('reply{{ $comment->id }}', '{{ $reply->user->name }}', true);"
                                    class="comment-reply reply"> Reply
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </a>
                             </div>
                         </div>
                         @endforeach
@@ -91,7 +92,7 @@
 
     let show_flag = false;
 
-    function triggerComment(replyId, reply_flag) {
+    function triggerComment(replyId, replyName, reply_flag) {
 
         let reply_guest = $('#' + replyId + '-guest');
         let reply = $('#' + replyId);
@@ -101,24 +102,23 @@
             reply_guest.toggle();
 
         @else
+            let textArea = reply.find("textarea");
+            show_flag = reply[0].getAttribute('style') === '';
+            if (show_flag && reply_flag) {
 
-        let textArea = reply.find("textarea");
-        show_flag = reply[0].getAttribute('style') === '';
-        if (show_flag && reply_flag) {
+            } else {
+                reply.toggle();
+            }
 
-        } else {
-            reply.toggle();
-        }
+            if (reply_flag) {
+                textArea.text('@' + replyName + ': ');
+            }
 
-        if (reply_flag) {
-            textArea.text('@wang: ');
-        }
+            if (!reply_flag) {
+                textArea.text('');
+            }
 
-        if (!reply_flag) {
-            textArea.text('');
-        }
-
-        textArea.focus();
+            textArea.focus();
 
         @endif
 
