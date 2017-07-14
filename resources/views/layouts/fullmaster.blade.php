@@ -3,6 +3,7 @@
 <head>
     <title>Breif | Post</title>
     @include('layouts.head-links')
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 <body>
 
