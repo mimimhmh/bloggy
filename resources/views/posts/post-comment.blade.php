@@ -23,27 +23,28 @@
 
                         </div>
 
-                    @if(count($comment->replies) >0 )
-                        @foreach($comment->replies as $reply)
+                        @if(count($comment->replies) >0 )
+                            @foreach($comment->replies as $reply)
 
-                        <div class="blog-comment clearfix">
-                            <a class="comment-avtar"><img src="{{URL::asset('images/avtar-comment.jpg')}}" alt="image"></a>
-                            <div class="comment-text">
-                                <h3>{{ $reply->user->name }}</h3>
-                                <h5>{{ $reply->created_at->diffForHumans() }}</h5>
-                                <p>
-                                    {{ $reply->body }}
-                                </p>
-                                <a href="javascript:{}"
-                                   onclick="triggerComment('reply{{ $comment->id }}', '{{ $reply->user->name }}', true);"
-                                   class="comment-reply reply"> Reply
-                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
+                                <div class="blog-comment clearfix">
+                                    <a class="comment-avtar"><img src="{{URL::asset('images/avtar-comment.jpg')}}"
+                                                                  alt="image"></a>
+                                    <div class="comment-text">
+                                        <h3>{{ $reply->user->name }}</h3>
+                                        <h5>{{ $reply->created_at->diffForHumans() }}</h5>
+                                        <p>
+                                            {{ $reply->body }}
+                                        </p>
+                                        <a href="javascript:{}"
+                                           onclick="triggerComment('reply{{ $comment->id }}', '{{ $reply->user->name }}', true);"
+                                           class="comment-reply reply"> Reply
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
 
-                        @endforeach
-                    @endif
+                            @endforeach
+                        @endif
 
                     </div>
                     <div class="blog-comment clearfix reply-div"
@@ -72,7 +73,7 @@
                             <a href="/login"><strong>login</strong></a>
                             to reply a comment
                         </div>
-                        <button class="reply-btn" disabled > Reply </button>
+                        <button class="reply-btn" disabled> Reply</button>
 
                     </div>
                     <br>
@@ -97,6 +98,7 @@
     /**
      *
      */
+    let requestSent = false; //stop duplciate submissions
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -108,20 +110,28 @@
         let reply_div = $(this).parents("div")[0];
         let div_id = reply_div.getAttribute('id');
         let reply_area = $(this).siblings('textarea')[0];
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: {body: reply_area.value},
-            success: function (data) {
-                $('#'+div_id).toggle();
-                appendReply(data);
-            },
-            error: function (data) {
-                console.log('Error:', data.responseText);
-            }
-        });
+
+        if (!requestSent) {
+
+            requestSent = true;//stop duplciate submissions
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {body: reply_area.value},
+                success: function (data) {
+                    $('#' + div_id).toggle();
+                    appendReply(data);
+                    requestSent = false;
+                },
+                error: function (data) {
+                    console.log('Error:', data.responseText);
+                }
+            });
+        }
+
     });
-    
+
     function appendReply(data) {
 
         let template = `
@@ -142,7 +152,7 @@
         </div>
         `;
 
-        let wrap_div = $("#wrap"+data.comment_id);
+        let wrap_div = $("#wrap" + data.comment_id);
         wrap_div.append(template);
 
     }
@@ -158,22 +168,22 @@
 
             reply_guest.show();
 
-        @else
-            let textArea = reply.find("textarea");
+                @else
+        let textArea = reply.find("textarea");
 
-            show_flag = reply[0].getAttribute('style') === '';
+        show_flag = reply[0].getAttribute('style') === '';
 
-            reply.show();
+        reply.show();
 
-            if (reply_flag) {
-                textArea.val('@' + replyName + ': ');
-            }
+        if (reply_flag) {
+            textArea.val('@' + replyName + ': ');
+        }
 
-            if (!reply_flag) {
-                textArea.val('');
-            }
+        if (!reply_flag) {
+            textArea.val('');
+        }
 
-            textArea.focus();
+        textArea.focus();
 
         @endif
 
