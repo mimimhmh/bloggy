@@ -2446,6 +2446,20 @@ header .tagline {color: #1C202A;font-family: "Raleway",sans-serif;}
     }
 }
 
+/*-------------------------
+  15- DIY
+----------------------------------------------- */
+
+.avatar {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #c8c8c8;
+    float: left;
+    margin-top: 5px;
+}
+
 .post-article {
     height: 100px;
     overflow: hidden;
