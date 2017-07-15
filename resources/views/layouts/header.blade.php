@@ -19,7 +19,6 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">
                                 <img class="avatar" src="{{URL::asset('images/author-avatar.png')}}" alt="logo">
-                                &nbsp; &nbsp;
                                 {{ Auth::user()->name }}</a>
 
                             <ul class="dropdown-menu" role="menu">
