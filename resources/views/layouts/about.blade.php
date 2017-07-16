@@ -5,19 +5,23 @@
     <a href="single-post.html" class="image"><img class="img-responsive" src="images/aboutme.jpg" alt="about me" /></a>
     <div class="author-widget">
         <h4 class="author-name">Jay Wang</h4>
-        <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+        <p>
+            If you believe, you can achieve!<br>
+            If anything is worth doing, it's worth overdoing.<br>
+            It's supposed to be hard. If it were easy, everyone would do it.<br>
+        </p>
     </div>
     <div class="social">
         <ul class="icons">
-            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i> </a></li>
+            <li><a target="_blank"><i class="fa fa-facebook"></i> </a></li>
             <li><a href="https://github.com/mimimhmh" target="_blank"><i class="fa fa-github"></i> </a></li>
-            <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i> </a></li>
-            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fa fa-instagram"></i> </a></li>
-            <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i> </a></li>
-            <li><a href="#" target="_blank"><i class="fa fa-tumblr"></i> </a></li>
-            <li><a href="#" target="_blank"><i class="fa fa-youtube-play"></i> </a></li>
-            <li><a href="#" target="_blank"><i class="fa fa-soundcloud"></i> </a></li>
+            <li><a target="_blank"><i class="fa fa-linkedin"></i> </a></li>
+            <li><a target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a target="_blank"><i class="fa fa-instagram"></i> </a></li>
+            <li><a target="_blank"><i class="fa fa-google-plus"></i> </a></li>
+            <li><a target="_blank"><i class="fa fa-tumblr"></i> </a></li>
+            <li><a target="_blank"><i class="fa fa-youtube-play"></i> </a></li>
+            <li><a target="_blank"><i class="fa fa-soundcloud"></i> </a></li>
         </ul>
     </div>
 </section>
