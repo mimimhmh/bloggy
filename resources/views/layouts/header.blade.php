@@ -18,8 +18,9 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">
-                                <img class="avatar" src="{{URL::asset('images/author-avatar.png')}}" alt="logo">
-                                {{ Auth::user()->name }}</a>
+                                <img class="avatar" src="{{URL::asset(Auth::user()->avatar)}}" alt="logo">
+                                {{ Auth::user()->name }}
+                            </a>
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/profile">profile</a></li>

@@ -8,7 +8,9 @@
             @foreach($post->comments as $comment)
                 <div class="blog-comment" id="blog-comment{{ $comment->id }}">
                     <div class="wrap-reply" id="wrap{{ $comment->id }}">
-                        <a class="comment-avtar"><img src="{{URL::asset($post->user->picture_url)}}" alt="image"></a>
+                        <a class="comment-avtar">
+                            <img src="{{URL::asset($post->user->avatar)}}" alt="image">
+                        </a>
                         <div class="comment-text">
                             <h3>{{ $comment->user->name }}</h3>
                             <h5>{{ $comment->created_at->diffForHumans() }}</h5>
@@ -27,7 +29,7 @@
                             @foreach($comment->replies as $reply)
 
                                 <div class="blog-comment clearfix">
-                                    <a class="comment-avtar"><img src="{{URL::asset('images/avtar-comment.jpg')}}"
+                                    <a class="comment-avtar"><img src="{{URL::asset($reply->user->avatar)}}"
                                                                   alt="image"></a>
                                     <div class="comment-text">
                                         <h3>{{ $reply->user->name }}</h3>
@@ -36,7 +38,8 @@
                                             {{ $reply->body }}
                                         </p>
                                         <a href="javascript:{}"
-                                           onclick="triggerComment('reply{{ $comment->id }}', '{{ $reply->user->name }}', true);"
+                                           onclick="triggerComment('reply{{ $comment->id }}',
+                                                   '{{ $reply->user->name }}', true);"
                                            class="comment-reply reply"> Reply
                                             <i class="fa fa-angle-right" aria-hidden="true"></i>
                                         </a>
