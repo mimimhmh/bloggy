@@ -19,6 +19,10 @@ Route::post('/votes/{post}', 'PostVotesController@store');
 
 Route::post('/reply/{comment}', 'ReplyController@store');
 
+Route::get('/profile', 'UsersController@profile');
+
+Route::post('/profile', 'UsersController@updateAvatar');
+
 //
 Route::get('/logout', 'Auth\SessionsController@destroy');
 

@@ -48,6 +48,7 @@ class Comment extends Model
         $new_arr = $reply->toArray();
 
         $new_arr["user_name"] = auth()->user()->name;
+        $new_arr["avatar"] = auth()->user()->avatar;
 
         return $new_arr;
 

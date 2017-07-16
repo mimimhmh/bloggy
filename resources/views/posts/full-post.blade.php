@@ -1,4 +1,4 @@
-@extends ('layouts.fullmaster')
+@extends ('layouts.full-master')
 
 @section ('content')
 
