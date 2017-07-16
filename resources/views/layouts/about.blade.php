@@ -8,7 +8,7 @@
         <p>
             If you believe, you can achieve!<br>
             If anything is worth doing, it's worth overdoing.<br>
-            It's supposed to be hard. If it were easy, everyone would do it.<br>
+            It's supposed to be hard. If it were easy, everyone would do it.
         </p>
     </div>
     <div class="social">

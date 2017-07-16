@@ -20,7 +20,5 @@
 				</div>
 			</div> <!-- End row -->
 		</div> <!-- End Container -->
-		<div id="instagram-footer">
-		</div>
 
 @endsection

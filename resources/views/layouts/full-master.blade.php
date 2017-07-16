@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Breif | Post</title>
+    <title>J Wang | Post</title>
     @include('layouts.head-links')
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>

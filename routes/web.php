@@ -23,6 +23,8 @@ Route::get('/profile', 'UsersController@profile');
 
 Route::post('/profile', 'UsersController@updateAvatar');
 
+Route::get('/contact', 'ContactController@show');
+
 //
 Route::get('/logout', 'Auth\SessionsController@destroy');
 
