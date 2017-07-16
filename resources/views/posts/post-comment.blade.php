@@ -139,7 +139,7 @@
 
         let template = `
         <div class="blog-comment clearfix">
-            <a class="comment-avtar"><img src="{{URL::asset('${ data.avatar }')}}" alt="image"></a>
+            <a class="comment-avtar"><img src="${ data.avatar }" alt="image"></a>
                 <div class="comment-text">
                 <h3>${ data.user_name }</h3>
                 <h5>${ data.created_at }</h5>
