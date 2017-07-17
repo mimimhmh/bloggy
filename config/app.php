@@ -230,6 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Model' => Illuminate\Database\Eloquent\Model::class,
         'Facebook' => SammyK\LaravelFacebookSdk\FacebookFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
     ],

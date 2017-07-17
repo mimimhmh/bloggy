@@ -25,6 +25,8 @@ Route::post('/profile', 'UsersController@updateAvatar');
 
 Route::get('/contact', 'ContactController@show');
 
+Route::post('/contact', 'ContactController@store');
+
 //
 Route::get('/logout', 'Auth\SessionsController@destroy');
 

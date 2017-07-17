@@ -30,30 +30,45 @@
                                 <h3 class="text-center">Contact Form</h3>
                                 <div class="contact-form ">
 
-                                    <form>
+                                    <form method="post" action="/contact">
+                                        {{ csrf_field() }}
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-pad-left">
                                             <div class="form-group">
-                                                <input type="text" placeholder="Name" />
+                                                <input value="{{ old('name') }}"
+                                                       type="text"
+                                                       name="name"
+                                                       placeholder="Name"
+                                                       required/>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-pad-right">
                                             <div class="form-group">
-                                                <input type="email" placeholder="Email" />
+                                                <input type="email"
+                                                       placeholder="Email"
+                                                       name="email"
+                                                       value="{{ old('email') }}"
+                                                       required/>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-pad-right">
                                             <div class="form-group">
-                                                <input type="text" placeholder="Subject" />
+                                                <input type="text"
+                                                       value="{{ old('subject') }}"
+                                                       name="subject"
+                                                       placeholder="Subject"
+                                                       required/>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
                                             <div class="form-group">
-                                                <textarea placeholder="Comment"></textarea>
+                                                <textarea name="comment" placeholder="Comment" required>
+                                                    {{ old('comment') }}
+                                                </textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
                                             <div class="form-group contactus-btn">
-                                                <a href="javascript:void(0)" class="cntct-btn"> Send Message </a>
+                                                <button type="submit" class="cntct-btn"> Send Message </button>
                                             </div>
                                         </div>
                                     </form>
@@ -66,6 +81,9 @@
 
                     </div>
                 </div>
+
+                @include('layouts.errors')
+
             </div> <!-- End col-8 -->
 
             <div class="col-md-4">
@@ -74,7 +92,11 @@
                     <section class="blurb">
                         <h2 class="title">ABOUT ME</h2>
 
-                        <a href="single-post.html" class="image"><img class="img-responsive" src="images/aboutme.jpg" alt="about me" /></a>
+                        <a href="single-post.html" class="image">
+                            <img class="img-responsive"
+                                 src="images/aboutme.jpg"
+                                 alt="about me" />
+                        </a>
                         <div class="author-widget">
                             <h4 class="author-name">Jay Wang</h4>
                             <p>
