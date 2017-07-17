@@ -7,11 +7,12 @@
     "require": {
         "php": ">=5.6.4",
         "barryvdh/laravel-ide-helper": "^2.3",
+        "caffeinated/flash": "^3.0",
+        "froala/wysiwyg-editor-php-sdk": "*",
+        "intervention/image": "*",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "froala/wysiwyg-editor-php-sdk" : "*",
-        "sammyk/laravel-facebook-sdk": "^3.0",
-        "intervention/image": "*"
+        "sammyk/laravel-facebook-sdk": "^3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

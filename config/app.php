@@ -180,6 +180,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         SammyK\LaravelFacebookSdk\LaravelFacebookSdkServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Caffeinated\Flash\FlashServiceProvider::class,
 
     ],
 
@@ -230,9 +231,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'Model' => Illuminate\Database\Eloquent\Model::class,
         'Facebook' => SammyK\LaravelFacebookSdk\FacebookFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Flash' => Caffeinated\Flash\Facades\Flash::class,
     ],
 
 ];

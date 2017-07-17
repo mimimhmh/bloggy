@@ -23,6 +23,7 @@
             <div class="col-md-8">
                 <!--////////////////////////////////////Container-->
                 <div id="container">
+                    @include('flash::message')
                     <div class="wrap-container">
                         <!-- Content-Box -->
                         <section class="content-box contact-form">

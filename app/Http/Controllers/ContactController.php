@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use Caffeinated\Flash\Facades\Flash;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -41,6 +42,8 @@ class ContactController extends Controller
         ]);
 
         Contact::create($request->all());
+
+        Flash::success('Your Message had been sent!');
 
         return back();
     }
