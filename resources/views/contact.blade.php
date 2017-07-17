@@ -14,16 +14,15 @@
 
 @include('layouts.header')
 
-@include('layouts.slider')
 
 <!-- Main -->
-<div id="main">
+<div id="main" class="top-margin">
+    @include('flash::message')
     <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <!--////////////////////////////////////Container-->
                 <div id="container">
-                    @include('flash::message')
                     <div class="wrap-container">
                         <!-- Content-Box -->
                         <section class="content-box contact-form">
