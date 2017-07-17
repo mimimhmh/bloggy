@@ -23,6 +23,8 @@ Route::get('/profile', 'UsersController@profile');
 
 Route::post('/profile', 'UsersController@updateAvatar');
 
+Route::get('/allContact', 'ContactController@index');
+
 Route::get('/contact', 'ContactController@show');
 
 Route::post('/contact', 'ContactController@store');

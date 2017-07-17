@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactReply;
 use App\Models\Contact;
 use Caffeinated\Flash\Facades\Flash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -16,6 +18,9 @@ class ContactController extends Controller
      */
     public function index() {
         //
+        $contacts = Contact::all();
+
+        return view('contact-content', compact('contacts'));
     }
 
     /**
@@ -40,6 +45,12 @@ class ContactController extends Controller
             'subject' => 'required',
             'comment' => 'required'
         ]);
+
+        $name = $request->input('name');
+
+        $email = $request->input('email');
+
+        Mail::to($email)->send(new ContactReply($name));
 
         Contact::create($request->all());
 
