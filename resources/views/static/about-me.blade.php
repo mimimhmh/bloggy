@@ -62,7 +62,7 @@
             </tr>
             <tr>
                 <td>
-                    Objective
+                    Show case:
                 </td>
             </tr>
             <tr>
@@ -511,6 +511,10 @@
 @endsection
 
 <style>
+
+    table h3 {
+        text-align: center;
+    }
 
     .edu {
         margin-left: 20px;
