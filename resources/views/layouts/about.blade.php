@@ -2,9 +2,11 @@
 <section class="blurb">
     <h2 class="title">ABOUT ME</h2>
 
-    <a href="single-post.html" class="image"><img class="img-responsive" src="images/aboutme.jpg" alt="about me" /></a>
+    <a href="single-post.html" class="image">
+        <img class="img-responsive" src="images/aboutme.jpg" alt="about me" />
+    </a>
     <div class="author-widget">
-        <h4 class="author-name">Jay Wang</h4>
+        <h4 class="author-name"><strong>Jay Wang</strong></h4>
         <p>
             If you believe, you can achieve!<br>
             If anything is worth doing, it's worth overdoing.<br>

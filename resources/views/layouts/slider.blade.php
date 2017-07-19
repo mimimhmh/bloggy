@@ -6,44 +6,44 @@
         <div class="owl-carousel owl-theme">
 
             <div class="feat-item item">
-                <img src='images/slider/featured-01.jpg' alt="slide 1">
+                <img src='images/slider/slider-1.png' alt="About JWang Blog">
                 <div class="feat-overlay">
                     <div class="feat-inner">
 
-                        <h2><a href="single-post.html">holiday woman summer girl</a></h2>
+                        <h2><a href="single-post.html">About JWang's Blog</a></h2>
                         <a href="#" class="feat-more">read more</a>
                     </div>
                 </div>
 
             </div>
             <div class="feat-item item">
-                <img src='images/slider/featured-02.jpg' alt="slide 1">
+                <img src='images/slider/slider-2.jpg' alt="About me">
                 <div class="feat-overlay">
                     <div class="feat-inner">
 
-                        <h2><a href="single-post.html">adult agriculture asia basket</a></h2>
+                        <h2><a href="single-post.html">J Wang's profile</a></h2>
                         <a href="single-post.html" class="feat-more">read more</a>
                     </div>
                 </div>
             </div><!-- End feat-item -->
 
             <div class="feat-item item">
-                <img src='images/slider/featured-03.jpg' alt="slide 1">
+                <img src='images/slider/slider-3.jpg' alt="Video Example Post">
                 <div class="feat-overlay">
                     <div class="feat-inner">
 
-                        <h2><a href="single-post.html">affection blur caring cold</a></h2>
+                        <h2><a href="single-post.html">Video Example Post</a></h2>
                         <a href="single-post.html" class="feat-more">read more</a>
                     </div>
                 </div>
             </div> <!-- End feat-item -->
 
             <div class="feat-item item">
-                <img src='images/slider/featured-04.jpg' alt="slide 1">
+                <img src='images/slider/slider-4.jpg' alt="Radio Example Post">
                 <div class="feat-overlay">
                     <div class="feat-inner">
 
-                        <h2><a href="single-post.html">adult beautiful blur city</a></h2>
+                        <h2><a href="single-post.html">Radio Example Post</a></h2>
                         <a href="single-post.html" class="feat-more">read more</a>
                     </div>
                 </div>
