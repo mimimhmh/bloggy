@@ -51,4 +51,12 @@
         });
         @endif
     });
+
+    $("#contact-submit-btn").click(function () {
+//        alert('clicked!');
+//        $(this).attr("disabled", "disabled");
+//        $(this).text("Please wait...");
+        $(this).slideUp();
+
+    });
 </script>
