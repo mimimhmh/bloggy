@@ -6,7 +6,7 @@
             <time class="published" datetime="{{ $popular['created_at']->toDateString() }}">
                 {{ $popular['created_at']->toFormattedDateString() }}
             </time>
-            <a href="#" class="author"><img src="images/author-avatar.png" alt="" /></a>
+            <a href="#" class="author"><img src="{{ $popular['user']['avatar'] }}" alt="" /></a>
         </header>
         <a href="/posts/{{ $popular['id'] }}"
            class="image">

@@ -10,8 +10,8 @@
                 <div class="feat-overlay">
                     <div class="feat-inner">
 
-                        <h2><a href="single-post.html">About JWang's Blog</a></h2>
-                        <a href="#" class="feat-more">read more</a>
+                        <h2><a href="/about-blog">About JWang's Blog</a></h2>
+                        <a href="/about-blog" class="feat-more">read more</a>
                     </div>
                 </div>
 
@@ -21,8 +21,8 @@
                 <div class="feat-overlay">
                     <div class="feat-inner">
 
-                        <h2><a href="single-post.html">J Wang's profile</a></h2>
-                        <a href="single-post.html" class="feat-more">read more</a>
+                        <h2><a href="/about-me">J Wang's profile</a></h2>
+                        <a href="/about-me" class="feat-more">read more</a>
                     </div>
                 </div>
             </div><!-- End feat-item -->
@@ -32,8 +32,8 @@
                 <div class="feat-overlay">
                     <div class="feat-inner">
 
-                        <h2><a href="single-post.html">Video Example Post</a></h2>
-                        <a href="single-post.html" class="feat-more">read more</a>
+                        <h2><a href="/video">Video Example Post</a></h2>
+                        <a href="/video" class="feat-more">read more</a>
                     </div>
                 </div>
             </div> <!-- End feat-item -->
@@ -43,8 +43,8 @@
                 <div class="feat-overlay">
                     <div class="feat-inner">
 
-                        <h2><a href="single-post.html">Radio Example Post</a></h2>
-                        <a href="single-post.html" class="feat-more">read more</a>
+                        <h2><a href="/radio">Radio Example Post</a></h2>
+                        <a href="/radio" class="feat-more">read more</a>
                     </div>
                 </div>
             </div> <!-- End feat-item -->

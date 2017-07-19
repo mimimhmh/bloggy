@@ -15,7 +15,7 @@
                     {{ $post->created_at->toFormattedDateString() }}
                 </time>
                 <a href="#" class="author"><span class="name">{{ $post->user->name }}</span>
-                    <img src="{{URL::asset($post->user->picture_url)}}" alt="{{ $post->user->name }}" /></a>
+                    <img src="{{URL::asset($post->user->avatar)}}" alt="{{ $post->user->name }}" /></a>
             </div>
         </header>
         <div class="image featured"><img src="{{URL::asset($post->large_img_url)}}" alt="" /></div>

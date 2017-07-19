@@ -36,7 +36,7 @@
             </div>
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="/posts/create" >Publish</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="/about-blog">About</a></li>
                 <li><a href="/contact">contact</a></li>
 
             </ul>

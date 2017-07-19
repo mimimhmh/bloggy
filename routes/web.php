@@ -29,6 +29,10 @@ Route::get('/contact', 'ContactController@show');
 
 Route::post('/contact', 'ContactController@store');
 
+Route::get('/about-blog', function(){
+    return view('static.about-blog');
+});
+
 //
 Route::get('/logout', 'Auth\SessionsController@destroy');
 
