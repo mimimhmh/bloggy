@@ -437,7 +437,7 @@ button:disabled:before,
 
 .image.featured {
     display: block;
-    margin: 0 0 3em 0;
+    margin: 0 0 2.2em 0;
     width: 100%;
 }
 
@@ -2524,7 +2524,7 @@ header .tagline {
 }
 
 .post-article {
-    height: 100px;
+    max-height: 100px;
     overflow: hidden;
 }
 
@@ -2592,4 +2592,8 @@ header .tagline {
     float: left;
     border-radius: 50%;
     margin-right: 25px;
+}
+
+fp-div {
+    width: 100%;
 }

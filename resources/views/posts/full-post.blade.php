@@ -15,10 +15,10 @@
                     {{ $post->created_at->toFormattedDateString() }}
                 </time>
                 <a href="#" class="author"><span class="name">{{ $post->user->name }}</span>
-                    <img src="{{URL::asset($post->user->avatar)}}" alt="{{ $post->user->name }}" /></a>
+                    <img src="{{URL::asset($post->user->avatar)}}" alt="{{ $post->user->name }}"/></a>
             </div>
         </header>
-        <div class="image featured"><img src="{{URL::asset($post->large_img_url)}}" alt="" /></div>
+        <div class="image featured"><img src="{{URL::asset($post->large_img_url)}}" alt=""/></div>
         <hr>
         <div class="fr-view">
             {!! html_entity_decode($post->body) !!}
@@ -42,10 +42,9 @@
                     <form id="voteForm{{ $post->id }}" method="post" action="/votes/{{ $post->id }}">
                         {{ csrf_field() }}
                         <a href="javascript:{}"
-                           onclick="document.getElementById('voteForm{{ $post->id }}').submit();return false;"
                            class="fa {{ Auth::check() &&
-                       Auth::user()->hasVotedFor($post) ? 'fa-heart':'fa-heart-o' }}"
-                                {{Auth::guest()? 'disabled' : ''  }}>
+                                        Auth::user()->hasVotedFor($post) ? 'fa-heart':'fa-heart-o' }}
+                                   form-link">
                             {{ $post->votes->count() }}
                         </a>
                     </form>
@@ -56,11 +55,11 @@
     </article>
 
     <!-- Pagination -->
-        @include('posts.post-related')
+    @include('posts.post-related')
     <!-- Blog Pagination Ends -->
 
     <!-- Blog Comments Begins -->
-        @include('posts.post-comment')
+    @include('posts.post-comment')
     <!-- Blog Pagination Ends -->
 
 @endsection

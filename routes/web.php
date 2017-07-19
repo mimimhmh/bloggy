@@ -33,6 +33,19 @@ Route::get('/about-blog', function(){
     return view('static.about-blog');
 });
 
+Route::get('/about-me', function(){
+    return view('static.about-me');
+});
+
+Route::get('/video', function(){
+    return view('static.video');
+});
+
+Route::get('/radio', function(){
+    return view('static.radio');
+});
+
+
 //
 Route::get('/logout', 'Auth\SessionsController@destroy');
 
