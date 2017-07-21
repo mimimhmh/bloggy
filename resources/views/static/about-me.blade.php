@@ -68,10 +68,10 @@
             <tr>
                 <td>
                     <p class="resume-para">
-                        I am looking for a PHP web application development position where my technical
-                        skills are continually challenged.
-                        I want to put my expertise and experience to work for a company
-                        that embraces growth and innovation.
+                        URL: http://bloggy-env.3tnpr2k6yy.ap-southeast-2.elasticbeanstalk.com/
+                        Laravel 5.4 project deployed on AWS Elasticbean Stalk.
+                        Feel free to check it out. Thanks.
+                        Git Hub Source Code Link: https://github.com/mimimhmh/bloggy
                     </p>
                 </td>
             </tr>
