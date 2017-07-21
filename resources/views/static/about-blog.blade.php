@@ -21,7 +21,7 @@
 
         <h1 style="color: #5e9ca0;">J Wang's Blog</h1>
         <h2>Source code:
-            <a href="https://github.com/mimimhmh/bloggy" target="_blank">
+            <a href="https://github.com/mimimhmh/bloggy"  target="_blank">
                 https://github.com/mimimhmh/bloggy
             </a>
         </h2>
