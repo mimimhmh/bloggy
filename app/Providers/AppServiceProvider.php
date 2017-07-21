@@ -22,7 +22,10 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('layouts.sidebar', function ($view){
 
-            $view->with('latest_posts', Post::latest()->paginate(3));
+            $view->with('latest_posts',
+                Post::latest()->orderBy('created_at', 'desc')
+                    ->take(3)
+                    ->get());
         });
 
     }

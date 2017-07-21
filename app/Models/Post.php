@@ -51,12 +51,12 @@ class Post extends Model
     }
 
     /**
-     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|static[]
      */
     public static function popular() {
 
         return Post::with('user')->withCount('votes')
-            ->orderBy('votes_count', 'desc')->paginate(3);
+            ->orderBy('votes_count', 'desc')->take(3)->get();
     }
 
 }
