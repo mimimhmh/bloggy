@@ -3,13 +3,12 @@ branch-defaults:
     environment: Bloggy-env
 environment-defaults:
   Bloggy-env:
-    branch: master
-    repository: bloggy-repo
+    branch: null
+    repository: null
 global:
   application_name: bloggy
   default_ec2_keyname: blog-key
-  default_platform: arn:aws:elasticbeanstalk:ap-southeast-2::platform/PHP 7.0 running
-    on 64bit Amazon Linux/2.4.1
+  default_platform: PHP 7.0
   default_region: ap-southeast-2
   include_git_submodules: true
   instance_profile: null
