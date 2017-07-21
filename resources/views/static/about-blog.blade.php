@@ -1,6 +1,7 @@
 @extends('layouts.static-master')
 
 @section('content')
+
     <article class="post">
         <header>
             <div class="title">
@@ -8,8 +9,8 @@
                 <p>Blog features</p>
             </div>
             <div class="meta">
-                <time class="published" datetime="{{ Carbon\Carbon::now() }}">
-                    {{ Carbon\Carbon::now()->toFormattedDateString() }}
+                <time class="published" datetime="2017-07-21 02:40:19">
+                    Jul 21, 2017
                 </time>
                 <a href="#" class="author"><span class="name">Jay Wang</span>
                     <img src="images/avatars/jay-wang.jpg" alt=""/></a>
@@ -19,11 +20,15 @@
         <div class="image featured"><img src="images/slider/slider-1.png" alt="" /></div>
 
         <h1 style="color: #5e9ca0;">J Wang's Blog</h1>
-        <h2>Source code: <a href="https://github.com/mimimhmh" target="_blank">https://github.com/mimimhmh</a></h2>
+        <h2>Source code:
+            <a href="https://github.com/mimimhmh/bloggy" target="_blank">
+                https://github.com/mimimhmh/bloggy
+            </a>
+        </h2>
         <hr>
         <h2 style="color: #2e6c80;">Projecct structures</h2>
         <p>
-        Laravel 5.4 + PHP 7 + Mysql -&gt; AWS&nbsp;Elastic Beanstalk&nbsp;
+            Laravel 5.4 + PHP 7 + Mysql -&gt; AWS&nbsp;Elastic Beanstalk&nbsp;
         </p>
         <br>
         <h2 style="color: #2e6c80;">Frontend design:</h2>
@@ -80,4 +85,5 @@
             </ul>
         </footer>
     </article>
+
 @endsection

@@ -68,10 +68,18 @@
             <tr>
                 <td>
                     <p class="resume-para">
-                        URL: http://bloggy-env.3tnpr2k6yy.ap-southeast-2.elasticbeanstalk.com/
+                        URL:
+                        <a href="http://bloggy-env.3tnpr2k6yy.ap-southeast-2.elasticbeanstalk.com"
+                           target="_blank">
+                            http://bloggy-env.3tnpr2k6yy.ap-southeast-2.elasticbeanstalk.com/
+                        </a>
                         Laravel 5.4 project deployed on AWS Elasticbean Stalk.
                         Feel free to check it out. Thanks.
-                        Git Hub Source Code Link: https://github.com/mimimhmh/bloggy
+                        Git Hub Source Code Link:
+                        <a href="https://github.com/mimimhmh/bloggy" target="_blank">
+                            https://github.com/mimimhmh/bloggy
+                        </a>
+
                     </p>
                 </td>
             </tr>
