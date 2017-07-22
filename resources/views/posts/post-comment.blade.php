@@ -9,7 +9,7 @@
                 <div class="blog-comment" id="blog-comment{{ $comment->id }}">
                     <div class="wrap-reply" id="wrap{{ $comment->id }}">
                         <a class="comment-avtar">
-                            <img src="{{URL::asset($post->user->avatar)}}" alt="image">
+                            <img src="{{URL::asset($comment->user->avatar)}}" alt="image">
                         </a>
                         <div class="comment-text">
                             <h3>{{ $comment->user->name }}</h3>
