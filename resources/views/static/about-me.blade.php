@@ -69,17 +69,17 @@
                 <td>
                     <p class="resume-para">
                         URL:
-                        <a href="http://bloggy-env.3tnpr2k6yy.ap-southeast-2.elasticbeanstalk.com"
+                        <a href="http://www.jwang.cc"
                            target="_blank">
-                            http://bloggy-env.3tnpr2k6yy.ap-southeast-2.elasticbeanstalk.com/
+                            http://www.jwang.cc
                         </a>
-                        Laravel 5.4 project deployed on AWS Elasticbean Stalk.
-                        Feel free to check it out. Thanks.
-                        Git Hub Source Code Link:
+                        <br />
+                        Laravel 5.4 project deployed on Forge (AWS Elasticbean Stalk once).<br />
+                        Feel free to check it out. Thanks.<br />
+                        Git Hub Source Code Link:<br />
                         <a href="https://github.com/mimimhmh/bloggy" target="_blank">
                             https://github.com/mimimhmh/bloggy
                         </a>
-
                     </p>
                 </td>
             </tr>

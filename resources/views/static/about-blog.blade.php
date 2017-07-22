@@ -28,7 +28,7 @@
         <hr>
         <h2 style="color: #2e6c80;">Projecct structures</h2>
         <p>
-            Laravel 5.4 + PHP 7 + Mysql -&gt; AWS&nbsp;Elastic Beanstalk&nbsp;
+            Laravel 5.4 + PHP 7 + Mysql -&gt; Forge (Changed from AWS Elasticbean Stalk)
         </p>
         <br>
         <h2 style="color: #2e6c80;">Frontend design:</h2>
