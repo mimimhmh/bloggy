@@ -21,7 +21,7 @@ class PostsController extends Controller
      */
     public function index() {
 
-        $orderBy = request()->exists('popular')? 'votes_count' : 'updated_at';
+        $orderBy = request()->exists('popular') ? 'votes_count' : 'updated_at';
 
         $posts = Post::with('user')->withCount('votes')
             ->orderBy($orderBy, 'desc')->paginate(3);
@@ -77,20 +77,59 @@ class PostsController extends Controller
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit($id){
+    public function edit($id) {
+
         $post = Post::findOrFail($id);
-        return view('posts.edit', compact('post'));
+        if ($post->user->id == auth()->user()->id)
+        {
+            return view('posts.edit', compact('post'));
+        }
+
+        return back();
     }
 
     /**
      * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function update(Request $request, $id) {
+
+        $post = Post::findOrFail($id);
+
+        $post->title = $request->input('title');
+        $post->slug = $request->input('slug');
+        $post->abstract = $request->input('abstract');
+        $post->body = $request->input('body');
+
+        if ($request->hasFile('large_img_url'))
+        {
+            $completePath = $this->storeMainImage($request, $id);
+            $post->large_img_url = $completePath;
+        }
+
+        if ($post->save())
+        {
+            return redirect()->home();
+        }
+    }
+
+    /**
+     * @param Request $request
+     * @param int $currentPostId
      * @return \Illuminate\Contracts\Routing\UrlGenerator|string
      */
-    public function storeMainImage(Request $request) {
+    public function storeMainImage(Request $request, $currentPostId = 0) {
 
-        $file = $request->file('large_img_url');
-        $filename = $file->getClientOriginalName();
+        $filename = time();
+
         $currentId = \DB::table('posts')->max('id') + 1;
+
+        if ($currentPostId)
+        {
+            $currentId = $currentPostId;
+        }
+
         $destinationPath = 'storage/images/posts/' . $currentId . '/main/';
         $request->file('large_img_url')->move($destinationPath, $filename);
         $completePath = url('/' . $destinationPath . $filename);

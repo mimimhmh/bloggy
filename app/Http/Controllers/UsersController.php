@@ -26,6 +26,10 @@ class UsersController extends Controller
         return view('auth.profile', compact('user'));
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function updateAvatar(Request $request) {
 
         $user = auth()->user();

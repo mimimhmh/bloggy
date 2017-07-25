@@ -5,7 +5,9 @@
     @include('posts.script-link')
 
     <h1>Editing your post</h1>
-    <form method="PATCH" action="/posts/{{ $post->id }}" enctype="multipart/form-data">
+    <form method="post" action="/posts/{{ $post->id }}" enctype="multipart/form-data">
+
+        {!! method_field('patch') !!}
 
         {{ csrf_field() }}
 
@@ -76,6 +78,8 @@
                 imageUploadURL: '/files/post',
                 imageUploadParams: {
                     location: 'images', // This allows us to distinguish between Froala or a regular file upload.
+                    method: 'patch',
+                    currentId: "{{ $post->id }}",
                     _token: "{{ csrf_token() }}" // This passes the laravel token with the ajax request.
                 },
                 // URL to get all department images from

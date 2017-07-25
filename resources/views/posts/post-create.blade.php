@@ -76,6 +76,7 @@
                 imageUploadURL: '/files/post',
                 imageUploadParams: {
                     location: 'images', // This allows us to distinguish between Froala or a regular file upload.
+                    method: 'post',
                     _token: "{{ csrf_token() }}" // This passes the laravel token with the ajax request.
                 },
                 // URL to get all department images from
