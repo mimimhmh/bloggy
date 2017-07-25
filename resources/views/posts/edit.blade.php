@@ -4,8 +4,8 @@
 
     @include('posts.script-link')
 
-    <h1>Publish a post</h1>
-    <form method="post" action="/posts" enctype="multipart/form-data">
+    <h1>Editing your post</h1>
+    <form method="PATCH" action="/posts/{{ $post->id }}" enctype="multipart/form-data">
 
         {{ csrf_field() }}
 
@@ -14,7 +14,7 @@
             <input type="text" class="form-control"
                    id="title"
                    name="title"
-                   value="{{ old('title') }}"
+                   value="{{ $post->title }}"
                    placeholder="Enter title"
                    required>
         </div>
@@ -22,7 +22,7 @@
         <div class="form-group">
             <label for="slug">Post Slug</label>
             <input type="text" class="form-control" id="slug" name="slug"
-                   value="{{ old('slug') }}"
+                   value="{{ $post->slug }}"
                    placeholder="Enter slug">
         </div>
 
@@ -33,7 +33,7 @@
                       placeholder="Enter abstract"
                       rows="2"
                       maxlength="400">
-                {{ old('abstract') }}
+                {{ $post->abstract }}
             </textarea>
             <small id="fileHelp" class="form-text text-muted">
                 Max length 400 characters.
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-            <label for="mainImage">Main Image</label>
+            <label for="mainImage">Main Image (Now is about-blog.jpg )</label>
             <input type="file" name="large_img_url" class="form-control-file" id="mainImage"
                    aria-describedby="fileHelp">
             <small id="fileHelp" class="form-text text-muted">Post Image 840 x 341.
@@ -51,11 +51,11 @@
         <div class="form-group">
             <label for="postEditor">Post body</label>
             <textarea class="form-control" id="postEditor" name="body">
-                {{ old('body') }}
+                {{ $post->body }}
             </textarea>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Publish</button>
+            <button type="submit" class="btn btn-primary">Update</button>
         </div>
 
     </form>
