@@ -1,8 +1,17 @@
 <article class="post">
     <header>
-        <div class="title">
-            <h2><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
-            <p>{{ $post->slug }}</p>
+        <div class="title row">
+            <div class="col-sm-10">
+                <h2><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
+                <p>{{ $post->slug }}</p>
+            </div>
+            <div class="col-sm-2" style="display: none;">
+                @if(auth()->check() && ($post->user->id == auth()->user()->id ))
+                    <a title="Edit post" href="/posts/{{ $post->id }}/edit">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
+                @endif
+            </div>
         </div>
         <div class="meta">
             <time class="published"
@@ -40,4 +49,15 @@
         </ul>
     </footer>
 </article>
+<script>
+    $(".title").mouseover(function() {
+        let editLink = $(this).children(".col-sm-2");
+        editLink.show();
+    });
 
+    $(".title").mouseout(function() {
+        let editLink = $(this).children(".col-sm-2");
+        editLink.hide();
+    });
+
+</script>
