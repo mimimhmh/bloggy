@@ -34,6 +34,9 @@
 <script src="{{URL::asset('js/owl.carousel.min.js')}}"></script>
 <script src="{{URL::asset('js/main.js')}}"></script>
 
+<!-- Vue Js -->
+<script src="https://unpkg.com/vue"></script>
+
 <!-- Include external CSS. -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
 
